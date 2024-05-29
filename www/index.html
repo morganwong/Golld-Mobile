@@ -1,0 +1,62 @@
+<!DOCTYPE html> <html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <link href="js/app.css" rel="stylesheet">
+
+    <style>html{overflow-y: scroll}</style>
+
+</head>
+<body ontouchstart="" style="text-align: center">
+<div class="app" id="id_mainContent">
+</div>
+
+<!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+<!-- es6-shim is required for ethereumjs wallet -->
+<script type="text/javascript" src="libs/es6-shim.js"></script>
+<script type="text/javascript" src="libs/ethereumjs-wallet-0.6.0.js"></script>
+
+<script type='text/javascript' src='libs/customWeb3.js'></script>
+
+
+<p id="noConnectionP" style="display: none; font-size: large; margin-left: auto; margin-right: auto; margin-top: 30%;">Make sure you have an internet connection!</p>
+<FORM id="noConnectionRefreshForm" style="display: none;">
+    <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh!" style="width: 30%; margin-left: 35%;">
+</FORM>
+<script type="text/javascript">
+
+    // For disabling logs below !
+//    BTGlobals.logging = false;
+
+    document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'interactive') {
+        } else if (state == 'complete') {
+            console.log(typeof StripeCheckout);
+            console.log(StripeCheckout);
+            if(typeof StripeCheckout === 'undefined'){
+                document.getElementById('noConnectionP').style.display = "block";
+                document.getElementById('noConnectionRefreshForm').style.display = "block";
+            }else{
+                document.getElementById('noConnectionP').style.display = "none";
+                document.getElementById('noConnectionRefreshForm').style.display = "none";
+            }
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

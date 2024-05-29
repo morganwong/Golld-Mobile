@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.golld.golldmobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Golld</name>
+    <description>
+        Mobile app for Golld Vouchers, featuring account management and a light wallet for the ethereum network.
+    </description>
+    <author email="tg@golld.com" href="http://www.golld.com">
+        Team Golld
+    </author>
+    <content src="index.html" />
+    <access origin="http://*" />
+    <access origin="https://*" />
+    <access origin="http://ec2-34-243-63-74.eu-west-1.compute.amazonaws.com" />
+    <access launch-external="true" origin="tel:*" />
+    <access launch-external="true" origin="mailto:*" />
+    <access launch-external="true" origin="geo:*" />
+    <access launch-external="true" origin="sms:*" />
+    <platform name="android">
+        <icon density="mdpi" src="icons/android/mdpi/icon.png" />
+        <icon density="hdpi" src="icons/android/hdpi/icon.png" />
+        <icon density="xhdpi" src="icons/android/xhdpi/icon.png" />
+        <icon density="xxhdpi" src="icons/android/xxhdpi/icon.png" />
+        <icon density="xxxhdpi" src="icons/android/xxxhdpi/icon.png" />
+    </platform>
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <preference name="iosPersistentFileLocation" value="Library" />
+    <plugin name="cordova-clipboard" spec="^1.2.1" />
+    <plugin name="cordova-plugin-x-toast" spec="^2.6.2" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.0" />
+    <plugin name="phonegap-nfc" spec="^1.0.3" />
+    <engine name="android" spec="^7.0.0" />
+</widget>

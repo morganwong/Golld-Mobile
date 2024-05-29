@@ -1,0 +1,54 @@
+{
+  "phases": {
+    "CSS assembly": {
+      "type": "assemble",
+      "dirs": [
+        {
+          "src": "../css",
+          "ext": "css"
+        }
+      ],
+      "dst": "app.css",
+      "options": {
+        "overwriteTarget": true
+      }
+    },
+    "JS Assembly": {
+      "type": "assemble",
+      "files": [
+        "../libs/jquery/jquery-3.3.1.min.js",
+        "../libs/bigthunk/bigthunk-min.js"
+      ],
+        "dirs" : [
+            { "src" : "core", "ext" : "js" },
+            { "src" : "net", "ext" : "js" },
+            { "src" : "evtHandlers", "ext" : "js" },
+            { "src" : "views", "ext" : "js" }
+        ],
+      "dst": "app.js",
+      "options": {
+        "overwriteTarget": true,
+        "archiveExisting": false
+      }
+    },
+    "Coffee Compile": {
+      "type": "coffeeCompile",
+      "srcDir": "."
+    },
+    "Less Compile": {
+      "type": "lessCompile",
+      "srcDir": "."
+    }
+  },
+  "targets": {
+    "all": [
+      "Coffee Compile",
+      "JS Assembly",
+      "CSS assembly",
+      "Less Compile"
+    ],
+    "css": ["CSS assembly"],
+    "js": ["JS Assembly"]
+  },
+  "defaultTarget": "all"
+}
